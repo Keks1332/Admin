@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Welteneinstellung</title>
+  <meta charset="UTF-8">
+
+<link rel="stylesheet" href="welteneinstellung.css">
+
+
+
+</head>
+
+<body>
+
+<div class="brown">
+
+<header>
+<h1>Welteneinstellung</h1>
+<hr/>
+<br>
+</header>
+
+<a class="Button" href="#" data-modal-id="popup1">Erstelle neue Welt</a>
+<br>
+<br>
+
+<div class="left">
+<p class="rahmen"> Weltenüberblick:</p>
+<nav>
+<ul>
+<li><a href="#">pre</a></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+</nav>
+</div>
+
+
+<div class="right">
+<section>
+<p class="rahmen">Welteinstellung:</P>
+Name:<br>
+Start:
+
+</section>
+</div>
+
+<div style="clear:both"></div>
+</div>
+
+<div id="popup1" class="modal-box">
+  <header> <a href="#" class="js-modal-close close">×</a>
+    <h3>Erstelle eine neue Welt</h3>
+  </header>
+  <div class="modal-body">
+	<form>
+	Name: <input type="text" name="name"><br>
+	<input type="text" name="name"><br>
+	<input type="text" name="name"><br>
+	<input type="text" name="name"><br>
+	<input type="text" name="name"><br>
+	<input type="text" name="name"><br>
+	<input type="text" name="name"><br>
+	<input type="text" name="name"><br>
+	<input type="text" name="name"><br>
+	<input type="text" name="name"><br>
+	<input type="text" name="name"><br>
+	<input type="text" name="name"><br>
+	<input type="text" name="name"><br>
+	<input type="text" name="name"><br>
+	<input type="text" name="name"><br>
+	<input type="text" name="name"><br>
+	<input type="text" name="name"><br>
+	</form>
+  </div>
+  <footer><a href="#" class="btn btn-small js-modal-close">Abbrechen</a> 
+  </footer>
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script>
+$(function(){
+
+var appendthis =  ("<div class='modal-overlay js-modal-close'></div>");
+
+	$('a[data-modal-id]').click(function(e) {
+		e.preventDefault();
+    $("body").append(appendthis);
+    $(".modal-overlay").fadeTo(500, 0.7);
+    //$(".js-modalbox").fadeIn(500);
+		var modalBox = $(this).attr('data-modal-id');
+		$('#'+modalBox).fadeIn($(this).data());
+	});  
+  
+  
+$(".js-modal-close, .modal-overlay").click(function() {
+    $(".modal-box, .modal-overlay").fadeOut(500, function() {
+        $(".modal-overlay").remove();
+    });
+ 
+});
+ 
+$(window).resize(function() {
+    $(".modal-box").css({
+        top: ($(window).height() - $(".modal-box").outerHeight()) / 2,
+        left: ($(window).width() - $(".modal-box").outerWidth()) / 2
+    });
+});
+ 
+$(window).resize();
+ 
+});
+</script>
+
+
+
+
+
+</body>
+
+</html> 
